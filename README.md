@@ -1,5 +1,5 @@
 ```markdown
-# Detecção de Anomalias em Dados Industriais
+# API de Detecção de Anomalias em Dados Industriais
 
 Esta é uma API para detectar anomalias em dados industriais. Ela utiliza três algoritmos de detecção de anomalias: Isolation Forest, Local Outlier Factor (LOF) e One-Class SVM. Além disso, também faz uso do cálculo do Intervalo Interquartil (IQR) para identificação de anomalias.
 
@@ -9,14 +9,14 @@ Para usar a API, siga os passos abaixo:
 
 1. Clone o repositório em sua máquina local:
 
-```
+```bash
 git clone https://github.com/dheiver/API-SCADA-BR.git
 cd API-SCADA-BR
 ```
 
 2. Crie e ative um ambiente virtual (recomendado):
 
-```
+```bash
 virtualenv venv
 # Para Windows:
 venv\Scripts\activate
@@ -26,53 +26,41 @@ source venv/bin/activate
 
 3. Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 4. Execute o servidor da aplicação:
 
-```
+```bash
 python app.py
 ```
 
 A API estará em execução, e você poderá enviar solicitações para a rota `/detect_anomalies` usando a estrutura JSON mencionada anteriormente. O resultado será uma lista contendo os valores anômalos detectados.
 
-## Parâmetros da API
+## Endpoints da API
 
-A API aceita os seguintes parâmetros em um objeto JSON:
+### Detectar Anomalias [POST /detect_anomalies]
+
+Detecta anomalias em um conjunto de dados.
+
+#### Parâmetros
 
 - `data`: Uma lista de números representando o conjunto de dados.
-- `contamination`: Um número decimal entre 0 e 1 que representa a porcentagem esperada de anomalias. O valor padrão é 0.05.
+- `contamination` (opcional): Um número decimal entre 0 e 1 que representa a porcentagem esperada de anomalias. O valor padrão é 0.05.
 
-## Exemplo de Uso
+#### Exemplo de Solicitação
 
-Exemplo de solicitação usando `curl`:
-
-```
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{"data": [120, 130, 140, 150, 160], "contamination": 0.05}' http://localhost:5000/detect_anomalies
 ```
 
-Exemplo de uso com `requests` em Python:
+#### Exemplo de Resposta
 
-```python
-import requests
-
-data = [120, 130, 140, 150, 160]
-contamination = 0.05
-
-url = "http://localhost:5000/detect_anomalies"
-
-payload = {
-    "data": data,
-    "contamination": contamination
+```json
+{
+    "anomalies": [120, 160]
 }
-
-response = requests.post(url, json=payload)
-
-anomalies = response.json()
-
-print(anomalies)
 ```
 
 ## Melhorias Futuras
@@ -91,6 +79,16 @@ Contribuições são bem-vindas! Se você quiser contribuir para esta API, por f
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE). Sinta-se livre para utilizar e modificar conforme necessário.
+
+## Autor
+
+Nome do Autor - [GitHub](https://github.com/nome-do-autor)
 ```
 
-Lembre-se de que essa versão do `README.md` é apenas um modelo, e você deve personalizá-lo com as informações específicas do projeto e outras instruções relevantes conforme a evolução do desenvolvimento. Certifique-se também de manter o arquivo `requirements.txt` atualizado sempre que adicionar ou remover dependências do projeto.
+Nesta versão do `README.md`, incluímos detalhes adicionais como:
+
+1. Uma seção "Endpoints da API" para fornecer informações específicas sobre o endpoint de detecção de anomalias.
+2. Exemplos de solicitação e resposta para facilitar a compreensão do uso da API.
+3. Uma seção "Autor" para creditar o criador ou mantenedor do projeto.
+
+Lembre-se de personalizar o arquivo `README.md` com as informações específicas do seu projeto, como nome do autor, links relevantes, descrições detalhadas e instruções de uso adicionais. Essas práticas ajudam a tornar o projeto mais amigável para outros desenvolvedores e usuários interessados em contribuir ou utilizar a API.
