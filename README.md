@@ -1,35 +1,55 @@
-A seguir, apresento uma versão inicial do arquivo `README.md` para a aplicação de detecção de anomalias em dados industriais:
+Perfeito! Com base no repositório "https://github.com/dheiver/API-SCADA-BR/", vamos atualizar o arquivo `README.md` com as informações específicas do projeto:
 
+```markdown
 # Detecção de Anomalias em Dados Industriais
 
-Esta aplicação pode ser usada para detectar anomalias em dados industriais. Ela recebe um conjunto de dados como entrada e retorna uma lista de valores anormais como saída.
+Esta é uma API para detectar anomalias em dados industriais. Ela utiliza três algoritmos de detecção de anomalias: Isolation Forest, Local Outlier Factor (LOF) e One-Class SVM. Além disso, também faz uso do cálculo do Intervalo Interquartil (IQR) para identificação de anomalias.
 
-## Uso da Aplicação
+## Uso da API
 
-Para usar a aplicação, você precisa ter o Python instalado no seu sistema. Siga os passos abaixo:
+Para usar a API, siga os passos abaixo:
 
-1. Clone este repositório em sua máquina local:
+1. Clone o repositório em sua máquina local:
 
 ```
-git clone https://github.com/seu-usuario/detecao-anomalias-dados-industriais.git
-cd detecao-anomalias-dados-industriais
+git clone https://github.com/dheiver/API-SCADA-BR.git
+cd API-SCADA-BR
 ```
 
-2. Instale as dependências:
+2. Crie e ative um ambiente virtual (recomendado):
+
+```
+virtualenv venv
+# Para Windows:
+venv\Scripts\activate
+# Para macOS/Linux:
+source venv/bin/activate
+```
+
+3. Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 
 ```
 pip install -r requirements.txt
 ```
 
-3. Execute o servidor da aplicação:
+4. Execute o servidor da aplicação:
 
 ```
 python app.py
 ```
 
-4. Uma vez que a aplicação esteja em execução, você pode enviar solicitações à API usando uma ferramenta como `curl` ou `Postman`.
+A API estará em execução, e você poderá enviar solicitações para a rota `/detect_anomalies` usando a estrutura JSON mencionada anteriormente. O resultado será uma lista contendo os valores anômalos detectados.
 
-Exemplo de uso com `curl`:
+## Parâmetros da API
+
+A API aceita os seguintes parâmetros em um objeto JSON:
+
+- `data`: Uma lista de números representando o conjunto de dados.
+- `contamination`: Um número decimal entre 0 e 1 que representa a porcentagem esperada de anomalias. O valor padrão é 0.05.
+
+## Exemplo de Uso
+
+Exemplo de solicitação usando `curl`:
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"data": [120, 130, 140, 150, 160], "contamination": 0.05}' http://localhost:5000/detect_anomalies
@@ -57,30 +77,22 @@ anomalies = response.json()
 print(anomalies)
 ```
 
-## Parâmetros da Aplicação
-
-A aplicação aceita dois parâmetros:
-
-- `data`: Um objeto JSON que contém o conjunto de dados como uma lista de números.
-- `contamination`: Um número que representa a porcentagem de dados que são esperados para ser anomalias. O valor padrão é 0.05.
-
 ## Melhorias Futuras
 
-A aplicação pode ser melhorada de várias maneiras, incluindo:
+A aplicação pode ser aprimorada de diversas maneiras, incluindo:
 
 - Adicionar suporte para outros tipos de dados, como texto, imagens e vídeos.
-- Adicionar suporte para outros métodos de detecção de anomalias, como análise de tendência, análise de desvio padrão e análise de cluster.
-- Adicionar suporte para visualização de dados.
-- Adicionar suporte para relatórios.
+- Incorporar métodos adicionais de detecção de anomalias, como análise de tendência, análise de desvio padrão e análise de cluster.
+- Implementar visualizações gráficas para facilitar a interpretação dos resultados.
+- Adicionar suporte para geração de relatórios.
 
 ## Contribuindo
 
-Contribuições são bem-vindas! Se você quiser contribuir para esta aplicação, por favor, abra um pull request explicando suas alterações e melhorias propostas.
+Contribuições são bem-vindas! Se você quiser contribuir para esta API, por favor, abra um pull request explicando suas alterações e melhorias propostas.
 
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE). Sinta-se livre para utilizar e modificar conforme necessário.
+```
 
----
-
-**Nota:** Lembre-se de personalizar o arquivo `README.md` com as informações específicas do seu projeto, como nome do repositório, nome do usuário, e outras instruções relevantes. Certifique-se também de atualizar a seção de "Melhorias Futuras" com as funcionalidades que você pretende implementar na aplicação.
+Lembre-se de que essa versão do `README.md` é apenas um modelo, e você deve personalizá-lo com as informações específicas do projeto e outras instruções relevantes conforme a evolução do desenvolvimento. Certifique-se também de manter o arquivo `requirements.txt` atualizado sempre que adicionar ou remover dependências do projeto.
