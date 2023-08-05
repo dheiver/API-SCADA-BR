@@ -1,4 +1,3 @@
-Sure! Below is a basic README file you can use for your GitHub repository:
 
 ```
 # Anomaly Detection API
