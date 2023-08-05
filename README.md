@@ -1,5 +1,3 @@
-Perfeito! Com base no repositório "https://github.com/dheiver/API-SCADA-BR/", vamos atualizar o arquivo `README.md` com as informações específicas do projeto:
-
 ```markdown
 # Detecção de Anomalias em Dados Industriais
 
