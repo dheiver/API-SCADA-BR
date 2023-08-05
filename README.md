@@ -1,12 +1,10 @@
-
-```
 # Anomaly Detection API
 
-This is a Flask-based API that provides anomaly detection using various methods like Isolation Forest, Local Outlier Factor (LOF), and One-Class SVM. The API takes input data and a contamination value as parameters and returns detected anomalies.
+Esta é uma API baseada em Flask que fornece detecção de anomalias usando vários métodos como Isolation Forest, Local Outlier Factor (LOF) e One-Class SVM. A API recebe dados de entrada e um valor de contaminação como parâmetros e retorna as anomalias detectadas.
 
-## Getting Started
+## Primeiros Passos
 
-### Prerequisites
+### Pré-requisitos
 
 - Python 3.x
 - Flask
@@ -15,27 +13,27 @@ This is a Flask-based API that provides anomaly detection using various methods 
 - Matplotlib
 - scikit-learn
 
-You can install the required dependencies using pip:
+Você pode instalar as dependências necessárias usando pip:
 
 ```
 pip install flask numpy pandas matplotlib scikit-learn
 ```
 
-### Running the API
+### Executando a API
 
-1. Clone this repository to your local machine.
-2. Install the required dependencies as mentioned in the "Prerequisites" section.
-3. Start the Flask server:
+1. Clone este repositório em sua máquina local.
+2. Instale as dependências necessárias conforme mencionado na seção "Pré-requisitos".
+3. Inicie o servidor Flask:
 
 ```
 python app.py
 ```
 
-The API will run on `http://127.0.0.1:5000/`.
+A API estará disponível em `http://127.0.0.1:5000/`.
 
-## Usage
+## Uso
 
-To detect anomalies, send a POST request to the `/detect_anomalies` endpoint with the following JSON payload:
+Para detectar anomalias, envie uma solicitação POST para o endpoint `/detect_anomalies` com o seguinte conteúdo JSON:
 
 ```
 {
@@ -44,31 +42,28 @@ To detect anomalies, send a POST request to the `/detect_anomalies` endpoint wit
 }
 ```
 
-- `data`: A list of numeric values for anomaly detection.
-- `contamination`: The proportion of anomalies expected in the data.
+- `data`: Uma lista de valores numéricos para detecção de anomalias.
+- `contamination`: A proporção de anomalias esperada nos dados.
 
-The API will return a JSON response with the detected anomalies:
+A API retornará uma resposta JSON com as anomalias detectadas:
 
 ```
 {
-  "anomalies": [80, 90, 100]
+  "anomalias": [80, 90, 100]
 }
 ```
 
-## Methods Used for Anomaly Detection
+## Métodos Utilizados para Detecção de Anomalias
 
-1. IQR (Interquartile Range) Method: It identifies anomalies using the IQR method.
-2. Isolation Forest: An ensemble method for anomaly detection.
-3. Local Outlier Factor (LOF): A local density-based method for anomaly detection.
-4. One-Class SVM: A support vector machine-based method for anomaly detection.
+1. Método IQR (Interquartile Range): Identifica anomalias usando o método IQR.
+2. Isolation Forest: Um método de conjunto para detecção de anomalias.
+3. Local Outlier Factor (LOF): Um método baseado em densidade local para detecção de anomalias.
+4. One-Class SVM: Um método baseado em máquina de vetores de suporte para detecção de anomalias.
 
-## Contributing
+## Contribuição
 
-Contributions are welcome! If you find any issues or want to add new features, feel free to create a pull request or open an issue.
+Contribuições são bem-vindas! Se você encontrar algum problema ou quiser adicionar novos recursos, sinta-se à vontade para criar um pull request ou abrir uma issue.
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-Replace `app.py` with the name of your main Python file containing the Flask app. Make sure to modify the content according to your actual code and project structure.
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
