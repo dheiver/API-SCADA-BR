@@ -1,3 +1,4 @@
+
 ```markdown
 # API de Detecção de Anomalias em Dados Industriais
 
@@ -9,14 +10,14 @@ Para usar a API, siga os passos abaixo:
 
 1. Clone o repositório em sua máquina local:
 
-```bash
+```
 git clone https://github.com/dheiver/API-SCADA-BR.git
 cd API-SCADA-BR
 ```
 
 2. Crie e ative um ambiente virtual (recomendado):
 
-```bash
+```
 virtualenv venv
 # Para Windows:
 venv\Scripts\activate
@@ -26,13 +27,13 @@ source venv/bin/activate
 
 3. Instale as dependências do projeto a partir do arquivo `requirements.txt`:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
 4. Execute o servidor da aplicação:
 
-```bash
+```
 python app.py
 ```
 
@@ -51,7 +52,7 @@ Detecta anomalias em um conjunto de dados.
 
 #### Exemplo de Solicitação
 
-```bash
+```
 curl -X POST -H "Content-Type: application/json" -d '{"data": [120, 130, 140, 150, 160], "contamination": 0.05}' http://localhost:5000/detect_anomalies
 ```
 
@@ -78,17 +79,11 @@ Contribuições são bem-vindas! Se você quiser contribuir para esta API, por f
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE). Sinta-se livre para utilizar e modificar conforme necessário.
+Este projeto está licenciado sob a Licença MIT. Sinta-se livre para utilizar e modificar conforme necessário.
 
 ## Autor
 
 Nome do Autor - [GitHub](https://github.com/nome-do-autor)
 ```
 
-Nesta versão do `README.md`, incluímos detalhes adicionais como:
-
-1. Uma seção "Endpoints da API" para fornecer informações específicas sobre o endpoint de detecção de anomalias.
-2. Exemplos de solicitação e resposta para facilitar a compreensão do uso da API.
-3. Uma seção "Autor" para creditar o criador ou mantenedor do projeto.
-
-Lembre-se de personalizar o arquivo `README.md` com as informações específicas do seu projeto, como nome do autor, links relevantes, descrições detalhadas e instruções de uso adicionais. Essas práticas ajudam a tornar o projeto mais amigável para outros desenvolvedores e usuários interessados em contribuir ou utilizar a API.
+Agora o `README.md` está formatado de forma correta, apresentando todas as seções de forma clara e legível. Lembre-se de substituir "Nome do Autor" e "https://github.com/nome-do-autor" pelas informações reais do criador ou mantenedor do projeto.
