@@ -2,6 +2,10 @@
 
 Esta é uma API baseada em Flask que fornece detecção de anomalias usando vários métodos como Isolation Forest, Local Outlier Factor (LOF) e One-Class SVM. A API recebe dados de entrada e um valor de contaminação como parâmetros e retorna as anomalias detectadas.
 
+## Descrição
+
+A detecção de anomalias é uma técnica importante em várias áreas, como segurança da informação, manufatura, finanças e saúde. Esta API fornece uma implementação simples de alguns métodos populares de detecção de anomalias, permitindo aos usuários detectar pontos de dados que se desviam significativamente do padrão geral.
+
 ## Primeiros Passos
 
 ### Pré-requisitos
@@ -55,10 +59,15 @@ A API retornará uma resposta JSON com as anomalias detectadas:
 
 ## Métodos Utilizados para Detecção de Anomalias
 
-1. Método IQR (Interquartile Range): Identifica anomalias usando o método IQR.
-2. Isolation Forest: Um método de conjunto para detecção de anomalias.
-3. Local Outlier Factor (LOF): Um método baseado em densidade local para detecção de anomalias.
-4. One-Class SVM: Um método baseado em máquina de vetores de suporte para detecção de anomalias.
+A API utiliza os seguintes métodos para detectar anomalias:
+
+1. Método IQR (Interquartile Range): Identifica anomalias usando o método IQR, que se baseia no primeiro quartil (Q1) e terceiro quartil (Q3) dos dados.
+
+2. Isolation Forest: Um método de conjunto que isola as anomalias em árvores de decisão aleatórias e as identifica com base no número de divisões necessárias para isolar um ponto.
+
+3. Local Outlier Factor (LOF): Um método baseado em densidade local que calcula o grau de isolamento de um ponto em relação aos seus vizinhos, identificando assim as anomalias.
+
+4. One-Class SVM: Um método baseado em máquina de vetores de suporte que encontra a fronteira que melhor envolve os dados normais, identificando pontos fora dessa fronteira como anomalias.
 
 ## Contribuição
 
